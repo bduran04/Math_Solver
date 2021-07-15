@@ -1,5 +1,5 @@
 module.exports = {
     User: require("./users"),
-    StudyGuide: require("./studyGuides")
+    StudyGuide: require("./study-guides")
   };
   
