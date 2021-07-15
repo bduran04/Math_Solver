@@ -8,7 +8,8 @@ This app provides step-by-step solutions to common problems in algebra, equation
 As a struggling high school/college student, I want to be able to create flash cards to assist me with studying for math exams. I want this app to have a responsive layout so I can study on the bus to class and a dark/light mode so I can study at all hours of the night. 
 
 ## Wireframe 
-To Be Added 
+![This is a basic wireframe for the app](client/public/wireframe.png)
+WIP
 
 ## User Flow Diagram
 To Be Added 
