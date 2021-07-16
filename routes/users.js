@@ -28,12 +28,11 @@ router.get("/", (req, res) => {
     }
 });
 
-  //This needs work; determine if getting via :id is okay 
-  router.get("/:id", async (req, res) =>  {
+  router.get("/:userId", async (req, res) =>  {
     try {
-      const id = req.params.id;
+      const userId = req.params.userId;
       const data = await User.findOne(
-          { _id: id },
+          { _id: userId },
       );
       res.json(data);
   } catch (err) {
