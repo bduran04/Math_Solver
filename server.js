@@ -1,5 +1,8 @@
 const express = require("express");
-const routes = require("./routes")
+const routes = require("./routes");
+const session = require('express-session');
+
+const MongoStore = require('connect-mongo');
 
 const mongoose = require("mongoose");
 const path = require("path");
@@ -8,6 +11,15 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+  app.use(session({
+    secret: 'Queen Bee',
+    maxAge: new Date(Date.now() + 3600000),
+    store: MongoStore.create(
+      { mongoUrl: process.env.MONGODB_URI || "mongodb://localhost/Math_Solver" }
+    )
+  }));
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -30,3 +42,5 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Math_Solver");
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
+
+
