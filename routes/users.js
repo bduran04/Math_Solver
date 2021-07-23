@@ -17,7 +17,7 @@ const db = require("../models")
 router.post("/", async (req, res) => {
   try {
     const data = await User.create(req.body)
-    res.json(data);
+    res.json({data, status: 200});
 
   } catch (err) {
     res.status(500).json(err)
@@ -53,6 +53,17 @@ router.post('/login', async (req, res) => {
   } catch (err) {
       console.log(err)
       res.status(400).json(err);
+  }
+});
+
+//logout
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+      req.session.destroy(() => {
+          res.status(204).end();
+      });
+  } else {
+      res.status(404).end();
   }
 });
 

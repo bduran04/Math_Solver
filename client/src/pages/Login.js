@@ -3,7 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { useHistory } from "react-router-dom";
-import { Grid, Box, Paper, Typography } from '@material-ui/core';
+import { Grid, Box, Typography } from '@material-ui/core';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
 import API from "../utils/api"
@@ -24,9 +24,12 @@ const useStyles = makeStyles((theme) => ({
 
 const Login = () => {
   const classes = useStyles();
+
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
+
   const history = useHistory();
+
   const handleLogin = async (event) => {
     event.preventDefault();
     const user = await API.loginUser(username, password);
@@ -41,18 +44,18 @@ const Login = () => {
 
   return (
     <form noValidate autoComplete="off" onSubmit={handleLogin} >
-      <Grid container 
-      spacing={3} 
-      direction="column"
-      alignItems="center"
-      justify="center"
-      style={{ minHeight: '100vh' }}
+      <Grid container
+        spacing={3}
+        direction="column"
+        alignItems="center"
+        justify="center"
+        style={{ minHeight: '100vh' }}
       >
-      <Grid item xs={12} sm={6}>
-        <Box className={classes.root} m={3} p={3} boxShadow={3}>
-          <Typography align="center" color='primary'>
-          User Login
-          </Typography>
+        <Grid item xs={12} sm={6}>
+          <Box className={classes.root} m={3} p={3} boxShadow={3}>
+            <Typography align="center" color='primary'>
+              User Login
+            </Typography>
             <TextField
               id="outlined-name"
               label="username"
@@ -72,20 +75,20 @@ const Login = () => {
               className={classes.button}
               variant="outlined"
               color='primary'
-              type="submit"
-            >
-              Login
+              startIcon={<PersonAddIcon />}
+              onClick={() => { history.push('/signup') }}>
+              Sign Up
             </Button>
             <Button
               className={classes.button}
               variant="contained"
               color='primary'
-              startIcon={<PersonAddIcon />}
-              onClick={() => { history.push('/signup') }}>
-              Sign Up
+              type="submit"
+            >
+              Login
             </Button>
-            </Box>
-          </Grid>
+          </Box>
+        </Grid>
       </Grid>
     </form>
   );

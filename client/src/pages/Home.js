@@ -1,16 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
 import SearchBar from '../components/SearchBar';
 import Results from '../components/Results';
 import mathsteps from 'mathsteps';
 import API from "../utils/api"
-import {useLocation} from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        '& .MuiTextField-root': {
+            display: "flex",
+            width: 200,
+            margin: theme.spacing(1),
+        },
+    }
+}
+));
 
 const Home = () => {
+    const classes = useStyles();
+
     const [steps, setSteps] = useState([]);
     const [wolframImage, setWolframImage] = useState('');
 
-   
+
     const onSubmit = async (equation) => {
         const wolframResponse = await API.wolframInfo(equation)
         if (wolframResponse.answer.success) {
@@ -28,20 +42,22 @@ const Home = () => {
 
     return (
         <div style={{ paddingTop: 48 }}>
-            <Grid container justifyContent="center">
+            <Grid container sm={6} xs={12}
+                direction="column"
+                alignItems="center"
+                justify="center">
                 <Grid item alignItems="center">
                     <div className="searchbar">
-                        {/* add an event listener to listen to when steps are returned */}
                         <SearchBar onSubmit={onSubmit} />
                     </div>
                 </Grid>
             </Grid>
-            <Grid container justifyContent="center">
+            <Grid container alignContent="center" direction='column' spacing={3}>
                 <Grid item sm={6} xs={12}>
-                   <img src={wolframImage} alt="equation plot"/>
+                    <img src={wolframImage} alt="equation plot" />
                 </Grid>
                 <Grid item sm={6} xs={12}>
-                    <Results results={steps}/>
+                    <Results results={steps} />
                 </Grid>
             </Grid>
         </div>
