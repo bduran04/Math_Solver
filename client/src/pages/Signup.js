@@ -9,31 +9,31 @@ const Signup = () => {
     const [password, setPassword] = React.useState('');
     const history = useHistory();
     const handleRegistration = async (event) => {
-      event.preventDefault();
+        event.preventDefault();
     };
     return (
         <form noValidate autoComplete="off" onSubmit={handleRegistration}>
             Sign Up
-        <div>
-          <TextField
-            id="outlined-name"
-            label="username"
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
-            variant="outlined"
-          />
-           <TextField
-            id="outlined-name"
-            label="password"
-            type="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-            variant="outlined"
-          />
-        </div>
-        <Button variant="contained" type="submit">Submit</Button>
-      <Button variant="contained" onClick={() => {history.push('/login')}}>Back</Button>
-      </form>
+            <div>
+                <TextField
+                    id="outlined-name"
+                    label="username"
+                    value={username}
+                    onChange={(event) => setUsername(event.target.value)}
+                    variant="outlined"
+                />
+                <TextField
+                    id="outlined-name"
+                    label="password"
+                    type="password"
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
+                    variant="outlined"
+                />
+            </div>
+            <Button variant="contained" type="submit">Submit</Button>
+            <Button variant="contained" onClick={() => { history.push('/login') }}>Back</Button>
+        </form>
     )
 }
 

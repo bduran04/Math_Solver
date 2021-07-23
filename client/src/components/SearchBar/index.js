@@ -5,19 +5,25 @@ import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 
 //clean this up as an arrown function 
-export default function SearchBar(props) {
+export default function SearchBar({onSubmit}) {
     const [equation, setEquation] = useState('');
     //refactor and use local storage instead of cookies
-    const [cookie] = useState(localStorage.getItem("equation"));
+    const cookie = localStorage.getItem("equation")
+
     const handleClick = () => {
         localStorage.setItem("equation", equation);
-        props.onSubmit(equation);
+        onSubmit(equation);
     };
+
+    useEffect(() => {
+        setEquation(cookie)
+        handleClick();
+    }, [])
 
     return (
         <>
             <Paper>
-                <InputBase color="primary" placeholder={cookie} onChange={(e) => setEquation(e.target.value)} />
+                <InputBase color="primary" defaultValue={cookie} onChange={(e) => setEquation(e.target.value)} />
                 <IconButton onClick={handleClick}>
                     <SearchIcon />
                 </IconButton>

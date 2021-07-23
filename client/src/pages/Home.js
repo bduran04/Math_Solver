@@ -4,20 +4,20 @@ import SearchBar from '../components/SearchBar';
 import Results from '../components/Results';
 import mathsteps from 'mathsteps';
 import API from "../utils/api"
+import {useLocation} from 'react-router-dom'
 
 const Home = () => {
     const [steps, setSteps] = useState([]);
     const [wolframImage, setWolframImage] = useState('');
 
+   
     const onSubmit = async (equation) => {
         const wolframResponse = await API.wolframInfo(equation)
-        console.log(wolframResponse)
         if (wolframResponse.answer.success) {
             // loop over each pod
             // check if pod title is Plot. This means an image is stored in the subpod
             wolframResponse.answer.pods.forEach((pod) => {
                 if (pod.title === 'Plot') {
-                    console.log(pod)
                     setWolframImage(pod.subpods[0].img.src);
                 }
             });
@@ -29,7 +29,7 @@ const Home = () => {
     return (
         <div style={{ paddingTop: 48 }}>
             <Grid container justifyContent="center">
-                <Grid item>
+                <Grid item alignItems="center">
                     <div className="searchbar">
                         {/* add an event listener to listen to when steps are returned */}
                         <SearchBar onSubmit={onSubmit} />
