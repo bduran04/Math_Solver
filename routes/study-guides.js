@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const StudyGuide = require("../models/users");
 const router = require('express').Router();
+const withAuth = require('../utils/auth.js')
 
 const db = require("../models")
 
@@ -18,9 +19,10 @@ router.get("/", (req, res) => {
       });
   });
 
-  router.post("/:UserId", ({ body,params }, res) => {
+  //add middleware
+  router.post("/", withAuth, ({ body,params }, res) => {
     db.StudyGuide.create(body)
-      .then(({ _id }) => db.User.findOneAndUpdate({ _id: params.UserId }, 
+      .then(({ _id }) => db.User.findOneAndUpdate({ _id: req.session.user_id }, 
       { $push: { studyGuides: _id } }, 
       { new: true }))
       .then(dbUser => {

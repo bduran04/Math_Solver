@@ -2,6 +2,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const User = require("../models/users");
 const router = require('express').Router();
+const https = require('https');
+const WolframAlphaAPI = require('wolfram-alpha-api');
+//this is gonna also go into the environment variables 
+const waApi = WolframAlphaAPI(process.env.WOLFRAM_APPID);
 
 const withAuth = require('../utils/auth.js')
 
@@ -34,7 +38,7 @@ router.post('/login', async (req, res) => {
       userData.comparePassword(req.body.password, (error, validPassword) => {
         if (!validPassword) {
           res
-              .status(400)
+              .status(401)
               .json({ message: 'Incorrect email or password, please try again' });
           return;
       }
@@ -42,8 +46,7 @@ router.post('/login', async (req, res) => {
       req.session.save(() => {
           req.session.user_id = userData.id;
           req.session.logged_in = true;
-
-          res.json({ user: userData, message: 'You are now logged in!' });
+          res.json({ user: userData, message: 'You are now logged in!', status: 200});
       });
       });
 
@@ -52,6 +55,8 @@ router.post('/login', async (req, res) => {
       res.status(400).json(err);
   }
 });
+
+//this obtains info from the logged in user 
 router.get('/currentUser', withAuth, async (req,res) => {
   try {
     const userData = await User.findById(req.session.user_id).populate("studyGuides")
@@ -62,6 +67,21 @@ router.get('/currentUser', withAuth, async (req,res) => {
     res.status(400).json(err);
 }
 });
+
+//wolfram alpha data
+router.post('/wolfram', async (req, res) => {
+  try {
+
+    const answer = await waApi.getFull({
+      input: req.body.equation
+    })
+    res.send({"success": 200, answer});
+  } catch (e) {
+    console.log(e);
+  }
+
+})
+
 
 // /api/users/:id/studyguides/??
 

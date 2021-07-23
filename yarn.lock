@@ -476,6 +476,11 @@
   "resolved" "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz"
   "version" "1.1.3"
 
+"complex.js@2.0.1":
+  "integrity" "sha1-6pDHoFrs6vOjdtLA9qeEIXJ9aHk="
+  "resolved" "https://registry.npmjs.org/complex.js/-/complex.js-2.0.1.tgz"
+  "version" "2.0.1"
+
 "component-emitter@^1.2.1":
   "integrity" "sha512-Rd3se6QB+sO1TwqZjscQrurpEPIfO0/yYnSin6Q/rD3mOutHvUrCAhJub3r90uNb+SESBuE0QYoB90YdfatsRg=="
   "resolved" "https://registry.npmjs.org/component-emitter/-/component-emitter-1.3.0.tgz"
@@ -650,6 +655,11 @@
   "resolved" "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz"
   "version" "1.2.0"
 
+"decimal.js@7.1.1":
+  "integrity" "sha1-GtytfXDXqRxCbXVvHrZWbDvmy88="
+  "resolved" "https://registry.npmjs.org/decimal.js/-/decimal.js-7.1.1.tgz"
+  "version" "7.1.1"
+
 "decode-uri-component@^0.2.0":
   "integrity" "sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU="
   "resolved" "https://registry.npmjs.org/decode-uri-component/-/decode-uri-component-0.2.0.tgz"
@@ -721,6 +731,11 @@
   "version" "4.2.1"
   dependencies:
     "is-obj" "^1.0.0"
+
+"dotenv@^10.0.0":
+  "integrity" "sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q=="
+  "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-10.0.0.tgz"
+  "version" "10.0.0"
 
 "duplexer@~0.1.1":
   "integrity" "sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg=="
@@ -954,6 +969,11 @@
   "integrity" "sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow=="
   "resolved" "https://registry.npmjs.org/forwarded/-/forwarded-0.2.0.tgz"
   "version" "0.2.0"
+
+"fraction.js@4.0.0":
+  "integrity" "sha1-c5dOL4tR73CVNtYkzJB4Liu2EnQ="
+  "resolved" "https://registry.npmjs.org/fraction.js/-/fraction.js-4.0.0.tgz"
+  "version" "4.0.0"
 
 "fragment-cache@^0.2.1":
   "integrity" "sha1-QpD60n8T6Jvn8zeZxrxaCr//DRk="
@@ -1597,6 +1617,25 @@
   "version" "1.0.0"
   dependencies:
     "object-visit" "^1.0.0"
+
+"mathjs@3.11.2":
+  "integrity" "sha1-0spyPX6SVMxY0UIaWmHYz6yP9kI="
+  "resolved" "https://registry.npmjs.org/mathjs/-/mathjs-3.11.2.tgz"
+  "version" "3.11.2"
+  dependencies:
+    "complex.js" "2.0.1"
+    "decimal.js" "7.1.1"
+    "fraction.js" "4.0.0"
+    "seed-random" "2.2.0"
+    "tiny-emitter" "1.0.2"
+    "typed-function" "0.10.5"
+
+"mathsteps@^0.2.0":
+  "integrity" "sha512-x/BBVJ7n+RsUj4EOcKuCBCvrQWWvP8i6v5x8nr73qYU8yph6LZWT1ELPKnnUDEEqxe6lrncQB7HacknStMJJ5g=="
+  "resolved" "https://registry.npmjs.org/mathsteps/-/mathsteps-0.2.0.tgz"
+  "version" "0.2.0"
+  dependencies:
+    "mathjs" "3.11.2"
 
 "media-typer@0.3.0":
   "integrity" "sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g="
@@ -2416,6 +2455,11 @@
     "loose-envify" "^1.1.0"
     "object-assign" "^4.1.1"
 
+"seed-random@2.2.0":
+  "integrity" "sha1-KpsZ4lCoFwmSMaW5mk2vgLf77VQ="
+  "resolved" "https://registry.npmjs.org/seed-random/-/seed-random-2.2.0.tgz"
+  "version" "2.2.0"
+
 "semver-diff@^2.0.0":
   "integrity" "sha1-S7uEN8jTfksM8aaP1ybsbWRdbTY="
   "resolved" "https://registry.npmjs.org/semver-diff/-/semver-diff-2.1.0.tgz"
@@ -2723,6 +2767,11 @@
   "resolved" "https://registry.npmjs.org/timed-out/-/timed-out-4.0.1.tgz"
   "version" "4.0.1"
 
+"tiny-emitter@1.0.2":
+  "integrity" "sha1-jklHDT9V+J4kchA2imu5+1GqFgE="
+  "resolved" "https://registry.npmjs.org/tiny-emitter/-/tiny-emitter-1.0.2.tgz"
+  "version" "1.0.2"
+
 "tiny-invariant@^1.0.2":
   "integrity" "sha512-ytxQvrb1cPc9WBEI/HSeYYoGD0kWnGEOR8RY6KomWLBVhqz0RgTwVO9dLrGz7dC+nN9llyI7OKAgRq8Vq4ZBSw=="
   "resolved" "https://registry.npmjs.org/tiny-invariant/-/tiny-invariant-1.1.0.tgz"
@@ -2782,6 +2831,11 @@
   dependencies:
     "media-typer" "0.3.0"
     "mime-types" "~2.1.24"
+
+"typed-function@0.10.5":
+  "integrity" "sha1-Lg8Yq9BlIZ+raUpEamXG0ZgYMsA="
+  "resolved" "https://registry.npmjs.org/typed-function/-/typed-function-0.10.5.tgz"
+  "version" "0.10.5"
 
 "uid-safe@~2.1.5":
   "integrity" "sha512-KPHm4VL5dDXKz01UuEd88Df+KzynaohSL9fBh096KWAxSKZQDI2uBrVqtvRM4rwrIrRRKsdLNML/lnaaVSRioA=="
@@ -2916,6 +2970,11 @@
   "version" "2.0.1"
   dependencies:
     "string-width" "^2.1.1"
+
+"wolfram-alpha-api@https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz":
+  "integrity" "sha512-Ixpm2jwpZA6Q5n9LkLl7Sr42v6ycbM4uuY9BnyAp2J+j/m0QElINtiRMPy1GQUMhz9nDL3fcLganuOG5cFVaaQ=="
+  "resolved" "https://products.wolframalpha.com/api/libraries/javascript/wolfram-alpha-api-1.0.0-rc.1.tgz"
+  "version" "1.0.0-rc.1"
 
 "wrap-ansi@^2.0.0":
   "integrity" "sha1-2Pw9KE3QV5T+hJc8rs3Rz4JP3YU="

@@ -1,6 +1,8 @@
+require('dotenv').config();
 const express = require("express");
 const routes = require("./routes");
 const session = require('express-session');
+
 
 const MongoStore = require('connect-mongo');
 

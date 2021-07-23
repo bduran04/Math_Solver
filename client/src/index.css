@@ -3,3 +3,7 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.MuiInputBase-input.MuiInputBase-input {
+  margin-left: 16px;
+};
