@@ -3,21 +3,19 @@ import React, { useContext, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import AuthContext from '../contexts/AuthContext';
 
+import API from "../utils/api"
+
 //create button that routes to the problems page 
 const Dashboard = () => {
-    const history = useHistory();
-    const auth = useContext(AuthContext);
-    console.log(auth.data.isLoggedIn)
-
-    useEffect(() => {
-        if (auth.data.isLoggedIn === false) {
-        history.replace("/login");
-        }
-      }, []); 
+  
+const currentUser = API.currentUser()
+console.log(currentUser)
 
     return (
         <div>
+            <h1 textAlign="center">
             Dashboard Page
+            </h1>
              {/* <Button variant="contained" onClick={() => {history.push('/?equation=${equation}')}}>Back</Button> */}
         </div>
     )

@@ -18,4 +18,8 @@ export default {
         .then(result => result.data)
         .catch(e => e);
       },
+    currentUser: function (username, password) {
+      return axios.get("/api/user/currentUser").then(result => result.data)
+      .catch(e => e);
+    },
 };
