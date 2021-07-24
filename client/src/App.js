@@ -6,14 +6,24 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
+import AuthContext from "./contexts/AuthContext";
+import AuthRoute from "./components/AuthRoute";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+
+  // setIsLoggedIn(true);
   return (
+    <AuthContext.Provider value={{ data: { isLoggedIn }, setIsLoggedIn }}>
       <Router >
         <Switch>
+          <AuthRoute exact path="/dashboard">
+            <Navbar />
+            <Dashboard />
+          </AuthRoute>
           <Route exact path="/">
-             <Navbar />
-             <Home />
+            <Navbar />
+            <Home />
           </Route>
           <Route exact path="/login">
             <Login />
@@ -21,13 +31,10 @@ function App() {
           <Route exact path="/signup">
             <Signup />
           </Route>
-          <Route exact path="/dashboard">
-            <Navbar />
-            <Dashboard />
-          </Route>
         </Switch>
       </Router>
-    );
-  };
+    </AuthContext.Provider>
+  );
+};
 
 export default App;

@@ -5,6 +5,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { useHistory } from "react-router-dom";
+import AuthContext from '../../contexts/AuthContext';
+import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,14 +24,33 @@ export default function ButtonAppBar() {
   const history = useHistory();
   const classes = useStyles();
 
+  const isLoggedIn = AuthContext._currentValue.data.isLoggedIn
+
   return (
     <div className={classes.root}>
-      <AppBar position="static"> 
+      <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            Math Solver
-          </Typography>
-          <Button color="primary" onClick={() => {history.push('/login')}} >Login</Button>
+          <Grid
+            justify="space-between" 
+            container
+            spacing={24}
+          >
+            <Grid item>
+            <Button classname={classes.title} color="inherit" onClick={() => { history.replace('/') }}>
+              Math Solver
+            </Button>
+            </Grid>
+            <Grid item>
+            {!isLoggedIn ?
+              <Button edge="end" color="inherit" onClick={() => { history.push('/login') }}>Login</Button> :
+              <Button color="inherit" onClick={() => { history.push('/logout') }}>Logout</Button>
+            }
+            {isLoggedIn ?
+              <Button color="inherit" onClick={() => { history.push('/dashboard') }}> dashboard</Button> :
+              <> </>
+            }
+             </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
     </div>

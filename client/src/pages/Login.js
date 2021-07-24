@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -7,6 +7,7 @@ import { Grid, Box, Typography } from '@material-ui/core';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
 import API from "../utils/api"
+import AuthContext from '../contexts/AuthContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,12 +30,15 @@ const Login = () => {
   const [password, setPassword] = React.useState('');
 
   const history = useHistory();
+  const auth = useContext(AuthContext);
 
   const handleLogin = async (event) => {
     event.preventDefault();
     const user = await API.loginUser(username, password);
     if (user.status === 200) {
-      history.push("/")
+      // login set the  value to true
+      auth.setIsLoggedIn(true)
+      history.push("/dashboard")
     } else {
       //snackbar
       window.alert("username/password incorrect")

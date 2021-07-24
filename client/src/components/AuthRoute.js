@@ -1,13 +1,12 @@
 import { Button } from '@material-ui/core';
 import React, { useContext, useEffect } from 'react';
-import { useHistory } from "react-router-dom";
+import { Route, useHistory } from "react-router-dom";
 import AuthContext from '../contexts/AuthContext';
 
 //create button that routes to the problems page 
-const Dashboard = () => {
+const AuthRoute = (props) => {
     const history = useHistory();
     const auth = useContext(AuthContext);
-    console.log(auth.data.isLoggedIn)
 
     useEffect(() => {
         if (auth.data.isLoggedIn === false) {
@@ -15,12 +14,7 @@ const Dashboard = () => {
         }
       }, []); 
 
-    return (
-        <div>
-            Dashboard Page
-             {/* <Button variant="contained" onClick={() => {history.push('/?equation=${equation}')}}>Back</Button> */}
-        </div>
-    )
+    return <Route {...props} />
 }
 
-export default Dashboard;
+export default AuthRoute;
