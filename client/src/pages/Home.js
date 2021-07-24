@@ -6,6 +6,7 @@ import Results from '../components/Results';
 import mathsteps from 'mathsteps';
 import API from "../utils/api"
 import { useLocation } from 'react-router-dom'
+import { Box, Paper, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -42,22 +43,33 @@ const Home = () => {
 
     return (
         <div style={{ paddingTop: 48 }}>
-            <Grid container sm={6} xs={12}
+            <Grid container justifyContent="center"
                 direction="column"
-                alignItems="center"
-                justify="center">
-                <Grid item alignItems="center">
+                alignItems="center">
+                <Grid item alignContent="center" >
                     <div className="searchbar">
                         <SearchBar onSubmit={onSubmit} />
                     </div>
                 </Grid>
             </Grid>
-            <Grid container alignContent="center" direction='column' spacing={3}>
-                <Grid item sm={6} xs={12}>
-                    <img src={wolframImage} alt="equation plot" />
+            <Grid container direction='column' spacing={2}>
+                <Grid item sm={12} xs={12}>
+                    <Box m={3} p={3} boxShadow={1}>
+                        <Typography >
+                            Plot
+                        </Typography>
+                        <Grid item display="flex" justifyContent="center">
+                        <img src={wolframImage} alt="equation plot" />
+                        </Grid>
+                    </Box>
                 </Grid>
-                <Grid item sm={6} xs={12}>
-                    <Results results={steps} />
+                <Grid item sm={12} xs={12}>
+                    <Box m={3} p={3} boxShadow={1}>
+                        <Typography>
+                            Step-by-Step Solution
+                        </Typography>
+                        <Results results={steps} />
+                    </Box>
                 </Grid>
             </Grid>
         </div>

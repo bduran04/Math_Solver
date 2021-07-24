@@ -29,7 +29,7 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             Math Solver
           </Typography>
-          <Button color="inherit" onClick={() => {history.push('/login')}} >Login</Button>
+          <Button color="primary" onClick={() => {history.push('/login')}} >Login</Button>
         </Toolbar>
       </AppBar>
     </div>
