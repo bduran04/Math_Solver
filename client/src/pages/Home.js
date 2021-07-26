@@ -45,20 +45,21 @@ const Home = () => {
         <div style={{ paddingTop: 48 }}>
             <Grid container justifyContent="center"
                 direction="column"
-                alignItems="center">
-                <Grid item alignContent="center" >
+                alignItems="center"
+                alignContent="center">
+                <Grid item >
                     <div className="searchbar">
                         <SearchBar onSubmit={onSubmit} />
                     </div>
                 </Grid>
             </Grid>
             <Grid container direction='column' spacing={2}>
-                <Grid item sm={12} xs={12}>
+                <Grid item sm={6} xs={12}>
                     <Box m={3} p={3} boxShadow={1}>
                         <Typography >
                             Plot
                         </Typography>
-                        <Grid item display="flex" justifyContent="center">
+                        <Grid item display="flex">
                         <img src={wolframImage} alt="equation plot" />
                         </Grid>
                     </Box>

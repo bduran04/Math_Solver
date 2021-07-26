@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { useHistory } from "react-router-dom";
 import AuthContext from '../../contexts/AuthContext';
@@ -31,12 +30,12 @@ export default function ButtonAppBar() {
       <AppBar position="static">
         <Toolbar>
           <Grid
-            justify="space-between" 
+            justifyContent="space-between" 
             container
-            spacing={24}
+            spacing={10}
           >
             <Grid item>
-            <Button classname={classes.title} color="inherit" onClick={() => { history.replace('/') }}>
+            <Button className={classes.title} color="inherit" onClick={() => { history.push('/') }}>
               Math Solver
             </Button>
             </Grid>

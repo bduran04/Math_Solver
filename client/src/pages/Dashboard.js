@@ -1,7 +1,5 @@
-import { Button, Card, CardContent, makeStyles, Typography } from '@material-ui/core';
-import React, { useContext, useEffect, useState } from 'react';
-import { useHistory } from "react-router-dom";
-import AuthContext from '../contexts/AuthContext';
+import { makeStyles  } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
 
 import API from "../utils/api"
 
@@ -28,38 +26,22 @@ const Dashboard = () => {
 
     const [userData, setUserData] = useState([]);
 
-    useEffect(() => {
-        loadUserData()
+    useEffect(async () => {
+        try {
+            const user = await API.currentUser()
+            setUserData(user)
+        } catch (err) {
+            console.log(err)
+        }
     }, []);
 
-    function loadUserData() {
-        API.currentUser()
-            .then(res =>
-                setUserData(res)
-            )
-            .catch(err => console.log(err));
-    };
-    
     return (
+        console.log(userData),
         <div>
-            <h1 justifyContent="center">
+            <h1 justifycontent="center">
                 Dashboard Page
             </h1>
-            <Card className={classes.root}>
-                <CardContent>
-            {userData.map(user => {
-                return (
-                    <Typography
-                      id={user._id}
-                      username={user.username}
-                      title={user.studyGuides[0].name}
-                    />
-            
-            )})}
-                </CardContent>
-            </Card>
-
-            {/* <Button variant="contained" onClick={() => {history.push('/?equation=${equation}')}}>Back</Button> */}
+        {/* <Button variant="contained" onClick={() => {history.push('/?equation=${equation}')}}>Back</Button> */ }
         </div>
     )
 }

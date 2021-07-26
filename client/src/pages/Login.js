@@ -52,7 +52,7 @@ const Login = () => {
         spacing={3}
         direction="column"
         alignItems="center"
-        justify="center"
+        justifyContent="center"
         style={{ minHeight: '100vh' }}
       >
         <Grid item xs={12} sm={6}>
