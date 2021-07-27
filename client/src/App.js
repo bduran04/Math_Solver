@@ -8,6 +8,8 @@ import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import AuthContext from "./contexts/AuthContext";
 import AuthRoute from "./components/AuthRoute";
+import Problems from "./pages/Problems";
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
@@ -20,6 +22,10 @@ function App() {
           <AuthRoute exact path="/dashboard">
             <Navbar />
             <Dashboard />
+          </AuthRoute>
+          <AuthRoute exact path="/problems">
+            <Navbar />
+            <Problems />
           </AuthRoute>
           <Route exact path="/">
             <Navbar />

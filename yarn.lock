@@ -569,14 +569,6 @@
   "resolved" "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz"
   "version" "1.0.2"
 
-"cors@^2.8.5":
-  "integrity" "sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g=="
-  "resolved" "https://registry.npmjs.org/cors/-/cors-2.8.5.tgz"
-  "version" "2.8.5"
-  dependencies:
-    "object-assign" "^4"
-    "vary" "^1"
-
 "create-error-class@^3.0.0":
   "integrity" "sha1-Br56vvlHo/FKMP1hBnHUAbyot7Y="
   "resolved" "https://registry.npmjs.org/create-error-class/-/create-error-class-3.0.2.tgz"
@@ -944,6 +936,11 @@
     "is-number" "^3.0.0"
     "repeat-string" "^1.6.1"
     "to-regex-range" "^2.1.0"
+
+"filter-obj@^1.1.0":
+  "integrity" "sha1-mzERErxsYSehbgFsbF1/GeCAXFs="
+  "resolved" "https://registry.npmjs.org/filter-obj/-/filter-obj-1.1.0.tgz"
+  "version" "1.1.0"
 
 "finalhandler@~1.1.2":
   "integrity" "sha512-aAWcW57uxVNrQZqFXjITpW3sIUQmHGG3qSb9mUah9MgMC4NeWhNOlNjXEYq3HjRAvL6arUviZGGJsBg6z0zsWA=="
@@ -1924,7 +1921,7 @@
   "resolved" "https://registry.npmjs.org/number-is-nan/-/number-is-nan-1.0.1.tgz"
   "version" "1.0.1"
 
-"object-assign@^4", "object-assign@^4.1.1":
+"object-assign@^4.1.1":
   "integrity" "sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM="
   "resolved" "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz"
   "version" "4.1.1"
@@ -2167,6 +2164,16 @@
   "integrity" "sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ=="
   "resolved" "https://registry.npmjs.org/qs/-/qs-6.7.0.tgz"
   "version" "6.7.0"
+
+"query-string@^7.0.1":
+  "integrity" "sha512-uIw3iRvHnk9to1blJCG3BTc+Ro56CBowJXKmNNAm3RulvPBzWLRqKSiiDk+IplJhsydwtuNMHi8UGQFcCLVfkA=="
+  "resolved" "https://registry.npmjs.org/query-string/-/query-string-7.0.1.tgz"
+  "version" "7.0.1"
+  dependencies:
+    "decode-uri-component" "^0.2.0"
+    "filter-obj" "^1.1.0"
+    "split-on-first" "^1.0.0"
+    "strict-uri-encode" "^2.0.0"
 
 "random-bytes@~1.0.0":
   "integrity" "sha1-T2ih3Arli9P7lYSMMDJNt11kNgs="
@@ -2640,6 +2647,11 @@
   "resolved" "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.9.tgz"
   "version" "3.0.9"
 
+"split-on-first@^1.0.0":
+  "integrity" "sha512-43ZssAJaMusuKWL8sKUBQXHWOpq8d6CfN/u1p4gUzfJkM05C8rxTmYrkIPTXapZpORA6LkkzcUulJ8FqA7Uudw=="
+  "resolved" "https://registry.npmjs.org/split-on-first/-/split-on-first-1.1.0.tgz"
+  "version" "1.1.0"
+
 "split-string@^3.0.1", "split-string@^3.0.2":
   "integrity" "sha512-NzNVhJDYpwceVVii8/Hu6DKfD2G+NrQHlS/V/qgv763EYudVwEcMQNxd2lh+0VrUByXN/oJkl5grOhYWvQUYiw=="
   "resolved" "https://registry.npmjs.org/split-string/-/split-string-3.1.0.tgz"
@@ -2673,6 +2685,11 @@
   "version" "0.0.4"
   dependencies:
     "duplexer" "~0.1.1"
+
+"strict-uri-encode@^2.0.0":
+  "integrity" "sha1-ucczDHBChi9rFC3CdLvMWGbONUY="
+  "resolved" "https://registry.npmjs.org/strict-uri-encode/-/strict-uri-encode-2.0.0.tgz"
+  "version" "2.0.0"
 
 "string_decoder@~1.1.1":
   "integrity" "sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg=="
@@ -2945,7 +2962,7 @@
   "resolved" "https://registry.npmjs.org/value-equal/-/value-equal-1.0.1.tgz"
   "version" "1.0.1"
 
-"vary@^1", "vary@~1.1.2":
+"vary@~1.1.2":
   "integrity" "sha1-IpnwLG3tMNSllhsLn3RSShj2NPw="
   "resolved" "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
   "version" "1.1.2"

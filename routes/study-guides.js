@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
       });
   });
 
-  //add middleware
+  //create new study guide by user id
   router.post("/", withAuth, ({ body,params }, res) => {
     db.StudyGuide.create(body)
       .then(({ _id }) => db.User.findOneAndUpdate({ _id: req.session.user_id }, 
@@ -44,5 +44,17 @@ router.get("/", (req, res) => {
         res.json(err);
       });
   });
+
+  //populate only the guides for one user
+  router.put("/:studyGuideId", (req, res) => {
+    db.StudyGuide.findOneAndUpdate({_id: req.params.studyGuideId}, req.body)
+      .then(() => {
+        res.json({success: 200});
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  });
+
 
 module.exports = router;

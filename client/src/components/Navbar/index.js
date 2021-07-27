@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import { useHistory } from "react-router-dom";
 import AuthContext from '../../contexts/AuthContext';
 import { Grid } from '@material-ui/core';
+import API from '../../utils/api';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,7 +24,20 @@ export default function ButtonAppBar() {
   const history = useHistory();
   const classes = useStyles();
 
-  const isLoggedIn = AuthContext._currentValue.data.isLoggedIn
+  const auth = useContext(AuthContext);
+
+  const logout = async () => {
+    //not logged in 
+    //hit the logout route
+    try{
+     await API.logoutUser();
+     auth.setIsLoggedIn(false);
+     history.replace('/')
+    } catch(err) {
+      window.alert("Logout unsuccessful")
+      throw (err);
+    }
+  };
 
   return (
     <div className={classes.root}>
@@ -35,19 +49,20 @@ export default function ButtonAppBar() {
             spacing={10}
           >
             <Grid item>
-            <Button className={classes.title} color="inherit" onClick={() => { history.push('/') }}>
+            <Button 
+            className={classes.title} 
+            color="inherit" 
+            onClick={() => { history.replace('/') }}>
               Math Solver
             </Button>
             </Grid>
             <Grid item>
-            {!isLoggedIn ?
+            {!auth.data.isLoggedIn ?
               <Button edge="end" color="inherit" onClick={() => { history.push('/login') }}>Login</Button> :
-              <Button color="inherit" onClick={() => { history.push('/logout') }}>Logout</Button>
-            }
-            {isLoggedIn ?
-              <Button color="inherit" onClick={() => { history.push('/dashboard') }}> Dashboard</Button> :
-              <> </>
-            }
+              <> 
+              <Button color="inherit" onClick={() => { history.push('/dashboard') }}> Dashboard</Button>
+              <Button color="inherit" onClick={logout}>Logout</Button> 
+              </>}
              </Grid>
           </Grid>
         </Toolbar>

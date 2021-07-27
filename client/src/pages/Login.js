@@ -38,11 +38,10 @@ const Login = () => {
     if (user.status === 200) {
       // login set the  value to true
       auth.setIsLoggedIn(true)
-      history.push("/dashboard")
+      history.push("/")
     } else {
       //snackbar
       window.alert("username/password incorrect")
-      console.log(user)
     }
   };
 
