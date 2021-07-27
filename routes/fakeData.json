@@ -1,0 +1,170 @@
+{
+    "success": 200,
+    "answer": {
+      "success": true,
+      "error": false,
+      "numpods": 5,
+      "datatypes": "",
+      "timedout": "",
+      "timedoutpods": "",
+      "timing": 1.155,
+      "parsetiming": 0.34500000000000003,
+      "parsetimedout": false,
+      "recalculate": "",
+      "id": "MSP1691i70f0i8518950e8000022a02h420339gb5e",
+      "host": "https://www4b.wolframalpha.com",
+      "server": "20",
+      "related": "https://www4b.wolframalpha.com/api/v1/relatedQueries.jsp?id=MSPa1701i70f0i8518950e80000466feicd1f9a41gh6587610826631541430",
+      "version": "2.6",
+      "inputstring": "4x+7=6",
+      "pods": [
+        {
+          "title": "Input",
+          "scanner": "Identity",
+          "id": "Input",
+          "position": 100,
+          "error": false,
+          "numsubpods": 1,
+          "subpods": [
+            {
+              "title": "",
+              "img": {
+                "src": "https://www4b.wolframalpha.com/Calculate/MSP/MSP1711i70f0i8518950e800001ah5411iid7cia40?MSPStoreType=image/gif&s=20",
+                "alt": "4 x + 7 = 6",
+                "title": "4 x + 7 = 6",
+                "width": 73,
+                "height": 19,
+                "type": "Default",
+                "themes": "1,2,3,4,5,6,7,8,9,10,11,12",
+                "colorinvertable": true
+              },
+              "plaintext": "4 x + 7 = 6"
+            }
+          ],
+          "expressiontypes": {
+            "name": "Default"
+          }
+        },
+        {
+          "title": "Plot",
+          "scanner": "Reduce",
+          "id": "RootPlot",
+          "position": 200,
+          "error": false,
+          "numsubpods": 1,
+          "subpods": [
+            {
+              "title": "",
+              "img": {
+                "src": "https://www4b.wolframalpha.com/Calculate/MSP/MSP1721i70f0i8518950e80000631ce7ih7ggf4887?MSPStoreType=image/gif&s=20",
+                "alt": "Plot",
+                "title": "",
+                "width": 392,
+                "height": 215,
+                "type": "2DMathPlot_1",
+                "themes": "1,2,3,4,5,6,7,8,9,10,11,12",
+                "colorinvertable": true
+              },
+              "plaintext": ""
+            }
+          ],
+          "expressiontypes": {
+            "name": "Default"
+          }
+        },
+        {
+          "title": "Alternate form",
+          "scanner": "Simplification",
+          "id": "AlternateForm",
+          "position": 300,
+          "error": false,
+          "numsubpods": 1,
+          "subpods": [
+            {
+              "title": "",
+              "img": {
+                "src": "https://www4b.wolframalpha.com/Calculate/MSP/MSP1731i70f0i8518950e8000054ae60a5de9bb63e?MSPStoreType=image/gif&s=20",
+                "alt": "4 x + 1 = 0",
+                "title": "4 x + 1 = 0",
+                "width": 73,
+                "height": 19,
+                "type": "Default",
+                "themes": "1,2,3,4,5,6,7,8,9,10,11,12",
+                "colorinvertable": true
+              },
+              "plaintext": "4 x + 1 = 0"
+            }
+          ],
+          "expressiontypes": {
+            "name": "Default"
+          }
+        },
+        {
+          "title": "Number line",
+          "scanner": "Reduce",
+          "id": "NumberLine",
+          "position": 400,
+          "error": false,
+          "numsubpods": 1,
+          "subpods": [
+            {
+              "title": "",
+              "img": {
+                "src": "https://www4b.wolframalpha.com/Calculate/MSP/MSP1741i70f0i8518950e8000032g0c986da2037if?MSPStoreType=image/gif&s=20",
+                "alt": "Number line",
+                "title": "",
+                "width": 330,
+                "height": 60,
+                "type": "1DMathPlot_1",
+                "themes": "1,2,3,4,5,6,7,8,9,10,11,12",
+                "colorinvertable": true
+              },
+              "plaintext": ""
+            }
+          ],
+          "expressiontypes": {
+            "name": "1DMathPlot"
+          }
+        },
+        {
+          "title": "Solution",
+          "scanner": "Reduce",
+          "id": "Solution",
+          "position": 500,
+          "error": false,
+          "numsubpods": 1,
+          "primary": true,
+          "subpods": [
+            {
+              "title": "",
+              "img": {
+                "src": "https://www4b.wolframalpha.com/Calculate/MSP/MSP1751i70f0i8518950e800001ff3f987c92gd53h?MSPStoreType=image/gif&s=20",
+                "alt": "x = -1/4",
+                "title": "x = -1/4",
+                "width": 550,
+                "height": 38,
+                "type": "Default",
+                "themes": "1,2,3,4,5,6,7,8,9,10,11,12",
+                "colorinvertable": true
+              },
+              "plaintext": "x = -1/4"
+            }
+          ],
+          "expressiontypes": {
+            "name": "Default"
+          },
+          "states": [
+            {
+              "name": "Decimal form",
+              "input": "Solution__Decimal form"
+            },
+            {
+              "name": "Step-by-step solution",
+              "input": "Solution__Step-by-step solution",
+              "stepbystep": true
+            }
+          ]
+        }
+      ]
+    }
+  }
