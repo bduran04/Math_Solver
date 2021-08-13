@@ -3,7 +3,9 @@ const mongoose = require("mongoose");
 const User = require("../models/users");
 const router = require('express').Router();
 const https = require('https');
+const WolframAlphaAPI = require('wolfram-alpha-api');
 //this is gonna also go into the environment variables 
+const waApi = WolframAlphaAPI(process.env.WOLFRAM_APPID);
 
 const withAuth = require('../utils/auth.js')
 
@@ -81,10 +83,10 @@ router.get('/currentUser', withAuth, async (req,res) => {
 router.post('/wolfram', async (req, res) => {
   try {
 
-    // const answer = await waApi.getFull({
-    //   input: req.body.equation
-    // })
-    res.send({"success": 200, answer: require('./fakeData.json')});
+    const answer = await waApi.getFull({
+      input: req.body.equation
+    })
+    res.send({"success": 200, answer});
   } catch (e) {
     console.log(e);
   }
