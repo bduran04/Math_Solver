@@ -60,7 +60,7 @@ export default function ButtonAppBar() {
             {!auth.data.isLoggedIn ?
               <Button edge="end" color="inherit" onClick={() => { history.push('/login') }}>Login</Button> :
               <> 
-              <Button color="inherit" onClick={() => { history.push('/dashboard') }}> Dashboard</Button>
+              <Button color="inherit" onClick={() => { history.push('/dashboard') }}>Dashboard</Button>
               <Button color="inherit" onClick={logout}>Logout</Button> 
               </>}
              </Grid>
